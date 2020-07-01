@@ -20,13 +20,9 @@
       </div>
     </div>
     <div
+      class="medidor"
       v-show="isFinite(resultado.porcetagem) && resultado.porcetagem > 0"
-      class="resultado"
-      :class="resultado.escolha"
     >
-      <span>{{ resultado.mensagem }}</span>
-    </div>
-    <div class="medidor">
       <meter
         min="0"
         max="100"
@@ -35,6 +31,13 @@
         :value="resultado.porcetagem"
       >
       </meter>
+    </div>
+    <div
+      v-show="isFinite(resultado.porcetagem) && resultado.porcetagem > 0"
+      class="resultado"
+      :class="resultado.escolha"
+    >
+      <span>{{ resultado.mensagem }}</span>
     </div>
   </div>
 </template>
@@ -128,9 +131,11 @@ export default {
   text-align: center;
   &.alcool {
     background: green;
+    border: 5px solid #006100;
     color: white;
   }
   &.gasolina {
+    border: 5px solid #ce8600;
     background: orange;
   }
 }
