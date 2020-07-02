@@ -19,25 +19,27 @@
         </div>
       </div>
     </div>
-    <div
-      class="medidor"
-      v-show="isFinite(resultado.porcetagem) && resultado.porcetagem > 0"
-    >
-      <meter
-        min="0"
-        max="100"
-        high="70"
-        optimum="50"
-        :value="resultado.porcetagem"
+    <div class="resultado-container">
+      <div
+        class="medidor"
+        v-show="isFinite(resultado.porcetagem) && resultado.porcetagem > 0"
       >
-      </meter>
-    </div>
-    <div
-      v-show="isFinite(resultado.porcetagem) && resultado.porcetagem > 0"
-      class="resultado"
-      :class="resultado.escolha"
-    >
-      <span>{{ resultado.mensagem }}</span>
+        <meter
+          min="0"
+          max="100"
+          high="70"
+          optimum="50"
+          :value="resultado.porcetagem"
+        >
+        </meter>
+      </div>
+      <div
+        v-show="isFinite(resultado.porcetagem) && resultado.porcetagem > 0"
+        class="resultado"
+        :class="resultado.escolha"
+      >
+        <span>{{ resultado.mensagem }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -137,6 +139,22 @@ export default {
   &.gasolina {
     border: 5px solid #ce8600;
     background: orange;
+  }
+}
+@media (min-width: 1020px) {
+  .resultado-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .resultado {
+      width: 50vw;
+    }
+    .medidor {
+      meter {
+        width: 50vw;
+      }
+    }
   }
 }
 .medidor {

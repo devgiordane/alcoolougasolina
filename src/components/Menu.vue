@@ -75,6 +75,11 @@ export default {
     }
   }
 }
+@media (min-width: 1020px) {
+  .menu {
+    justify-content: space-around;
+  }
+}
 .popup {
   background: #006100;
   color: white;

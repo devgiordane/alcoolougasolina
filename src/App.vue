@@ -1,19 +1,19 @@
 <template>
   <div id="app">
     <Calculadora />
-    <Menu></Menu>
+    <!-- <Menu></Menu> -->
   </div>
 </template>
 
 <script>
 import Calculadora from "./components/Calculadora.vue";
-import Menu from "./components/Menu";
+// import Menu from "./components/Menu";
 
 export default {
   name: "App",
   components: {
     Calculadora,
-    Menu,
+    // Menu,
   },
 };
 </script>
